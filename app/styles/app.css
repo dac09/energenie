@@ -14,3 +14,6 @@
 .view-enter.ng-enter.ng-enter-active {
   opacity: 1;
 }
+#dash-go {
+  margin-top: 30px;
+}

@@ -18,6 +18,10 @@ angular.module('energenieApp', [
         templateUrl: 'views/dash.html',
         controller: 'DashCtrl'
       })
+      .when('/getstarted', {
+        templateUrl: 'views/getstarted.html',
+        controller: 'GetstartedCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
