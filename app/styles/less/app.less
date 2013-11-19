@@ -4,16 +4,10 @@
        -o-transition: @transition;
           transition: @transition;
 }
+
 .opacity(@opacity) {
   opacity: @opacity / 100;
   filter: ~"alpha(opacity=@{opacity})";
-}
-
-a {
-  .transition(opacity 0.4s ease-in-out);
-  &:hover {
-    .opacity(70);
-  }
 }
 
 @provider-glyphs: ~".gas, .elec, .water";
