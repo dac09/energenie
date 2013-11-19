@@ -304,11 +304,11 @@ module.exports = function (grunt) {
                 options: {
                     // Specifies directories to scan for @import directives when parsing. 
                     // Default value is the directory of the source, which is probably what you want.
-                    paths: ["app/styles/less"],
+                    paths: ["<%= yeoman.app %>/styles/less"],
                 },
                 files: {
                     // compilation.css  :  source.less
-                    "app/styles/app.css": "app/styles/less/app.less"
+                    "<%= yeoman.app %>/styles/app.css": "<%= yeoman.app %>/styles/less/app.less"
                 }
             },
         }
