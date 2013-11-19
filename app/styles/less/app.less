@@ -1,0 +1,35 @@
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
+a {
+  .transition(opacity 0.4s ease-in-out);
+  &:hover {
+    .opacity(70);
+  }
+}
+
+@provider-glyphs: ~".gas, .elec, .water";
+
+.glyphicon@{provider-glyphs}{
+  font-size:50px;
+}
+
+.enter-providers{
+  padding: 20px 0px 20px 0px;
+}
+
+.view-enter.ng-enter{
+  .transition(0.4s ease-in-out all);
+  opacity:0;
+  &.ng-enter-active{
+    opacity:1;
+  }
+}
