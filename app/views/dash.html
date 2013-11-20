@@ -11,7 +11,7 @@
           <label for="gasBill" class="col-sm-12 padding15" >New Gas Bill</label>
           <div class="col-sm-12">
             <input class="form-control" id="gasBill" type="number" placeholder="£" ng-model="gasBill">
-            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.model.gasDate" is-open="$parent.opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
+            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.model.gasDate" is-open="$parent.opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
           </div>
 
       </div>
@@ -25,7 +25,7 @@
           <label for="elecBill" class="col-sm-12 padding15" >New Electricity Bill</label>
           <div class="col-sm-12">
             <input class="form-control" id="elecBill" type="number" placeholder="£" ng-model="elecBill">
-            <!-- <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.model.elecDate" is-open="$parent.opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" /> -->
+            <input type="text" id='elecDate' class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.elecBill" is-open="$parent.opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
           </div>
         </div>
 
@@ -39,7 +39,7 @@
           <label for="waterBill" class="col-sm-12 padding15" >New Water Bill</label>
           <div class="col-sm-12">
             <input class="form-control" id="waterBill" type="number" placeholder="£" ng-model="waterBill">
-            <!-- <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.model.waterDate" is-open="$parent.opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" /> -->
+            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.elecBill" is-open="$parent.opened3" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
           </div>
         </div>
          <button class="btn btn-warning dash-add-btn">Add</button>
