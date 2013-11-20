@@ -1,3 +1,11 @@
+.boxsizing {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
 .glyphicon.gas, .elec, .water {
   font-size: 50px;
 }
@@ -19,4 +27,19 @@
 }
 .iconWell {
   font-size: 100px;
+}
+.padding15 {
+  padding: 15px;
+}
+.nav,
+.pagination,
+.carousel a {
+  cursor: pointer;
+}
+.dash-add-btn {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
 }
