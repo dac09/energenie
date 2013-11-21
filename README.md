@@ -21,6 +21,7 @@ Didn't write tests - oops ;)
 
 ###Running it:
     npm install
+    bower install
     grunt server
 
 
