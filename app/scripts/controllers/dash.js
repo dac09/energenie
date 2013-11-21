@@ -16,7 +16,7 @@ angular.module('energenieApp')
   	}
 
     $scope.dateRangeFilter = function(bill){
-      if ($scope.filter.startDate || $scope.filter.endDate)
+      if ($scope.filter!=null)
         return (bill.date >= $scope.filter.startDate) && (bill.date <= $scope.filter.endDate)
       else
         return true;
@@ -25,6 +25,10 @@ angular.module('energenieApp')
     $scope.showFilters = function(){
       var filters  = $('#filterBody');
         filters.slideDown();
+    }
+
+    $scope.clearFilters = function(){
+      $scope.filter = null;
     }
 
   });

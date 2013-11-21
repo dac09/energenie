@@ -68,6 +68,8 @@
         <div class="col-sm-4">
             <input type="text" class='form-control col-sm-2' datepicker-popup="dd-MMMM-yyyy" ng-model="filter.endDate" is-open="opened5" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="End Date" />
         </div>
+                <btn class="col-sm-1 btn btn-danger" ng-click="clearFilters()">Clear</btn>
+
         </div>
 </div>
 
@@ -75,7 +77,6 @@
     <th ng-click="predicate = 'amount'; reverse=true">Amount</th>
     <th ng-click="predicate = 'type'; reverse=false">Type</th>
     <th ng-click="predicate = 'date'; reverse=false">Date</th>
-{{startDate}}
     <tr ng-repeat="bill in bills | orderBy:predicate:reverse | filter:dateRangeFilter" >
       <td>{{bill.amount}}</td>
       <td>{{bill.type}}</td>
