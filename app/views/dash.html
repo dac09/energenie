@@ -1,50 +1,70 @@
-<h1>{{name}}</h1>
-<h3>{{water}}</h3>
-<h3>{{elec}}</h3>
 
 <div class="container">
   <div class="row">
-    
-  <div class="well col-xs-12 col-sm-4 text-center">
+      <h3>Welcome to your dash, {{name}}! </h3>
+      Quickly add your bills, search for the ones you've already put in or just look through your stats to see where you stand!
+  </div>
+<br>
+
+  <div class="row">  
+    <div class="well col-xs-12 col-sm-4 text-center">
         <span class="glyphicon glyphicon-fire iconWell"></span>
         <div class="form-group">
           <label for="gasBill" class="col-sm-12 padding15" >New Gas Bill</label>
-          <div class="col-sm-12">
-            <input class="form-control" id="gasBill" type="number" placeholder="£" ng-model="gasBill">
-            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.model.gasDate" is-open="$parent.opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
+          <div class="col-sm-12" ng-init="gas.type='Gas'">
+            <input class="form-control" id="gasBill" type="number" placeholder="£" ng-model="gas.amount">
+            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="gas.date" is-open="opened1" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
           </div>
 
       </div>
-                <button class="btn btn-warning dash-add-btn">Add</button>
+                <button class="btn btn-warning dash-add-btn" ng-click="addBill(gas)">Add</button>
 
-  </div>
+    </div>
 
-  <div class="well col-xs-12 col-sm-4 text-center">
-        <span class="glyphicon glyphicon-flash iconWell"></span>
-        <div class="form-group">
-          <label for="elecBill" class="col-sm-12 padding15" >New Electricity Bill</label>
-          <div class="col-sm-12">
-            <input class="form-control" id="elecBill" type="number" placeholder="£" ng-model="elecBill">
-            <input type="text" id='elecDate' class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.elecBill" is-open="$parent.opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
+    <div class="well col-xs-12 col-sm-4 text-center">
+          <span class="glyphicon glyphicon-flash iconWell"></span>
+          <div class="form-group">
+            <label for="elecBill" class="col-sm-12 padding15" >New Electricity Bill</label>
+            <div class="col-sm-12" ng-init="elec.type='Electricity'">
+              <input class="form-control" id="elecBill" type="number" placeholder="£" ng-model="elec.amount">
+              <input type="text" id='elecDate' class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="elec.date" is-open="opened2" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
+            </div>
           </div>
-        </div>
 
-         <button class="btn btn-warning dash-add-btn">Add</button>
-
-  </div>
+         <button class="btn btn-warning dash-add-btn" ng-click="addBill(elec)">Add</button>
+    </div>
 
   <div class="well col-xs-12 col-sm-4 text-center">
         <span class="glyphicon glyphicon-tint iconWell"></span>
         <div class="form-group">
           <label for="waterBill" class="col-sm-12 padding15" >New Water Bill</label>
-          <div class="col-sm-12">
-            <input class="form-control" id="waterBill" type="number" placeholder="£" ng-model="waterBill">
-            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="$parent.elecBill" is-open="$parent.opened3" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
+          <div class="col-sm-12" ng-init="water.type='Water'">
+            <input class="form-control" id="waterBill" type="number" placeholder="£" ng-model="water.amount">
+            <input type="text" class='form-control' datepicker-popup="dd-MMMM-yyyy" ng-model="water.date" is-open="opened3" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Pick Date" />
           </div>
         </div>
-         <button class="btn btn-warning dash-add-btn">Add</button>
+         <button class="btn btn-warning dash-add-btn" ng-click="addBill(water)">Add</button>
 
   </div>
   </div>
 
 </div>
+
+<br>
+<hr>
+
+<h1>Your bills: </h1>
+<table class="table">
+    <th ng-click="predicate = 'amount'; reverse=true">Amount</th>
+    <th ng-click="predicate = 'type'; reverse=false">Type</th>
+    <th ng-click="predicate = 'date'; reverse=false">Date</th>
+
+    <tr ng-repeat="bill in bills | orderBy:predicate:reverse">
+      <td>{{bill.amount}}</td>
+      <td>{{bill.type}}</td>
+      <td>{{bill.date | date:'d/M/yy'}}</td>
+    </tr>
+</table>
+<br>
+<br>
+<ht>
