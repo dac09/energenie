@@ -15,4 +15,16 @@ angular.module('energenieApp')
   		$scope.bills.push(newBill);
   	}
 
+    $scope.dateRangeFilter = function(bill){
+      if ($scope.filter.startDate || $scope.filter.endDate)
+        return (bill.date >= $scope.filter.startDate) && (bill.date <= $scope.filter.endDate)
+      else
+        return true;
+    }
+
+    $scope.showFilters = function(){
+      var filters  = $('#filterBody');
+        filters.slideDown();
+    }
+
   });

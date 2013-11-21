@@ -54,17 +54,33 @@
 <hr>
 
 <h1>Your bills: </h1>
+
+<div class="panel panel-default">
+<div ng-click="showFilters()" class="panel-heading">
+  <h3 class="panel-title" ><span class="glyphicon glyphicon-filter"></span> Filters  <span class="pull-right">+</span>
+</h3>
+</div>
+<div id="filterBody" class="panel-body">
+<h5 class="col-sm-3">By date:</h5> 
+        <div class="col-sm-4">
+            <input type="text" class='form-control col-sm-2' datepicker-popup="dd-MMMM-yyyy" ng-model="filter.startDate" is-open="opened4" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="Start Date" />
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class='form-control col-sm-2' datepicker-popup="dd-MMMM-yyyy" ng-model="filter.endDate" is-open="opened5" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" placeholder="End Date" />
+        </div>
+        </div>
+</div>
+
 <table class="table">
     <th ng-click="predicate = 'amount'; reverse=true">Amount</th>
     <th ng-click="predicate = 'type'; reverse=false">Type</th>
     <th ng-click="predicate = 'date'; reverse=false">Date</th>
-
-    <tr ng-repeat="bill in bills | orderBy:predicate:reverse">
+{{startDate}}
+    <tr ng-repeat="bill in bills | orderBy:predicate:reverse | filter:dateRangeFilter" >
       <td>{{bill.amount}}</td>
       <td>{{bill.type}}</td>
       <td>{{bill.date | date:'d/M/yy'}}</td>
     </tr>
 </table>
 <br>
-<br>
-<ht>
+<hr>
