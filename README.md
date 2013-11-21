@@ -1,7 +1,7 @@
 energenie
 =========
-
-Simple single page application with no backend (but can be easily extended to)
+- Simple single page application, for tracking energy bills. 
+- No backend, but can be easily extended, and is meant to be used with one.
 
 ###Built using
 - **JS Libraries:** Angular JS, Angular UI, jQuery, Bootsrtap 3.0
