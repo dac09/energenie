@@ -14,7 +14,10 @@ Demonstrates a few angular concepts:
 3. Typeahead
 
 **Note:** I do have some DOM manipulation in controllers, which breaks convention. 
-This is bad practice - only did it for the sake of simplicity.
+This is bad practice - only did it for the sake of simplicity. I'll fix linting issues when I get a chance.
 
+###Running it:
+    npm install
+    grunt server
 
 
