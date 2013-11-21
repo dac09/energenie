@@ -13,5 +13,8 @@ Demonstrates a few angular concepts:
 2. Storing values in services and sharing across controllers
 3. Typeahead
 
-**Note:** I do have some dom manipulation in controllers, which breaks convention, didn't have the time to fix this!
+**Note:** I do have some DOM manipulation in controllers, which breaks convention. 
+This is bad practice - only did it for the sake of simplicity.
+
+
 
