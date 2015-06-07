@@ -24,3 +24,7 @@ Didn't write tests - oops ;)
 ###Running it:
     npm install
     grunt
+
+> Note:
+> This is from a few years ago, so please keep that in mind.
+> Out dated tools like ng-min are still in the project
