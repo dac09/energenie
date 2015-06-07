@@ -302,7 +302,7 @@ module.exports = function (grunt) {
             // production config is also available
             dist: {
                 options: {
-                    // Specifies directories to scan for @import directives when parsing. 
+                    // Specifies directories to scan for @import directives when parsing.
                     // Default value is the directory of the source, which is probably what you want.
                     paths: ["<%= yeoman.app %>/styles/less"],
                 },
@@ -353,9 +353,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
-    'test',
-    'build'
+    'server'
   ]);
 
 

@@ -1,11 +1,13 @@
 energenie
 =========
-- Simple single page application, for tracking energy bills. 
+- Simple single page application, for tracking energy bills.
 - No backend, but can be easily extended, and is meant to be used with one.
+- This is just a hack, so keep that in mind when looking at conventions
 
 ###Built using
 - **JS Libraries:** Angular JS, Angular UI, jQuery, Bootsrtap 3.0
 - **Build tools**: Yeoman, grunt-contrib-less, npm
+- Yeoman only used for initial scaffold
 
 ###What it is:
 Demonstrates a few angular concepts:
@@ -14,14 +16,11 @@ Demonstrates a few angular concepts:
 3. Typeahead
 
 ###Notes
-I do have some DOM manipulation in controllers, which breaks convention. 
+I do have some DOM manipulation in controllers, which breaks convention.
 This is bad practice - only did it for the sake of simplicity. I'll fix linting issues when I get a chance.
 
 Didn't write tests - oops ;)
 
 ###Running it:
     npm install
-    bower install
-    grunt server
-
-
+    grunt
