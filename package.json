@@ -30,10 +30,11 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "bower install"
+    "preinstall": "npm i -g bower",
+    "postinstall": "bower install && grunt build"
   },
   "dependencies": {
+    "express": "^4.12.4",
     "grunt-contrib-less": "~0.8.2"
   }
 }

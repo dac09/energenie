@@ -1,0 +1,7 @@
+{
+  "name": "Energenie",
+  "description": "Simple sample energey tracking app",
+  "repository": "https://github.com/dac09/energenie",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["angular", "express", "static"]
+}
